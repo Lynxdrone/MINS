@@ -38,7 +38,7 @@ Panels:
   - Class: rviz/Time
     Name: Time
     SyncMode: 0
-    SyncSource: Livox 3d
+    SyncSource: MSCKF Points
 Preferences:
   PromptSaveOnExit: true
 Toolbars:
@@ -72,8 +72,6 @@ Visualization Manager:
       Frames:
         All Enabled: false
         base_link:
-          Value: false
-        base_link_frd:
           Value: false
         c0:
           Value: false
@@ -122,48 +120,34 @@ Visualization Manager:
         cam0:
           Value: true
         cam1:
-          Value: false
+          Value: true
         cam2:
           Value: false
-        fc_frame:
-          Value: false
         global:
-          Value: true
-        imu:
-          Value: true
-        lidar0:
           Value: false
-        livox_frame:
-          Value: true
-        map:
-          Value: true
-        map0:
-          Value: true
-        map_ned:
-          Value: true
-        oak:
+        imu:
           Value: true
         oak-d-base-frame:
           Value: false
-        oak_imu_frame:
+        oak_d_pro:
           Value: false
-        oak_left_camera_frame:
+        oak_d_pro_imu_frame:
           Value: false
-        oak_left_camera_optical_frame:
+        oak_d_pro_left_camera_frame:
           Value: false
-        oak_model_origin:
+        oak_d_pro_left_camera_optical_frame:
           Value: false
-        oak_rgb_camera_frame:
+        oak_d_pro_model_origin:
           Value: false
-        oak_rgb_camera_optical_frame:
+        oak_d_pro_rgb_camera_frame:
           Value: false
-        oak_right_camera_frame:
+        oak_d_pro_rgb_camera_optical_frame:
           Value: false
-        oak_right_camera_optical_frame:
+        oak_d_pro_right_camera_frame:
+          Value: false
+        oak_d_pro_right_camera_optical_frame:
           Value: false
         odom:
-          Value: true
-        odom_ned:
           Value: false
       Marker Alpha: 1
       Marker Scale: 3
@@ -172,88 +156,75 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        map:
-          map_ned:
-            {}
-          odom:
-            global:
-              c0:
-                {}
-              c1:
-                {}
-              c10:
-                {}
-              c11:
-                {}
-              c12:
-                {}
-              c13:
-                {}
-              c14:
-                {}
-              c15:
-                {}
-              c16:
-                {}
-              c17:
-                {}
-              c18:
-                {}
-              c19:
-                {}
-              c2:
-                {}
-              c20:
-                {}
-              c21:
-                {}
-              c3:
-                {}
-              c4:
-                {}
-              c5:
-                {}
-              c6:
-                {}
-              c7:
-                {}
-              c8:
-                {}
-              c9:
-                {}
-              imu:
-                base_link:
-                  base_link_frd:
-                    {}
-                  fc_frame:
-                    livox_frame:
-                      {}
-                cam0:
-                  {}
-                cam1:
-                  {}
-                cam2:
-                  {}
-                lidar0:
-                  {}
-              map0:
-                {}
-            odom_ned:
-              {}
         oak-d-base-frame:
-          oak:
-            oak_imu_frame:
+          oak_d_pro:
+            oak_d_pro_imu_frame:
               {}
-            oak_left_camera_frame:
-              oak_left_camera_optical_frame:
+            oak_d_pro_left_camera_frame:
+              oak_d_pro_left_camera_optical_frame:
                 {}
-            oak_model_origin:
+            oak_d_pro_model_origin:
               {}
-            oak_rgb_camera_frame:
-              oak_rgb_camera_optical_frame:
+            oak_d_pro_rgb_camera_frame:
+              oak_d_pro_rgb_camera_optical_frame:
                 {}
-            oak_right_camera_frame:
-              oak_right_camera_optical_frame:
+            oak_d_pro_right_camera_frame:
+              oak_d_pro_right_camera_optical_frame:
+                {}
+        odom:
+          global:
+            c0:
+              {}
+            c1:
+              {}
+            c10:
+              {}
+            c11:
+              {}
+            c12:
+              {}
+            c13:
+              {}
+            c14:
+              {}
+            c15:
+              {}
+            c16:
+              {}
+            c17:
+              {}
+            c18:
+              {}
+            c19:
+              {}
+            c2:
+              {}
+            c20:
+              {}
+            c21:
+              {}
+            c3:
+              {}
+            c4:
+              {}
+            c5:
+              {}
+            c6:
+              {}
+            c7:
+              {}
+            c8:
+              {}
+            c9:
+              {}
+            imu:
+              base_link:
+                {}
+              cam0:
+                {}
+              cam1:
+                {}
+              cam2:
                 {}
       Update Interval: 0
       Value: true
@@ -815,7 +786,7 @@ Visualization Manager:
   Global Options:
     Background Color: 44; 44; 44
     Default Light: true
-    Fixed Frame: map
+    Fixed Frame: odom
     Frame Rate: 60
   Name: root
   Tools:
@@ -839,7 +810,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/ThirdPersonFollower
-      Distance: 3.4312238693237305
+      Distance: 8.001469612121582
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -847,17 +818,17 @@ Visualization Manager:
         Value: false
       Field of View: 0.7853981852531433
       Focal Point:
-        X: -0.5606646537780762
-        Y: 0.858644962310791
+        X: 0.9848971366882324
+        Y: -0.14750397205352783
         Z: 0
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.5576451420783997
+      Pitch: 0.7926445603370667
       Target Frame: imu
-      Yaw: 2.8638176918029785
+      Yaw: 6.205164432525635
     Saved: ~
 Window Geometry:
   Displays:
