@@ -180,8 +180,17 @@ bool ROS2Helper::Image2Data(const sensor_msgs::msg::Image::ConstSharedPtr msg, i
 WheelData ROS2Helper::JointState2Data(const sensor_msgs::msg::JointState::SharedPtr msg) {
   WheelData data;
   data.time = rclcpp::Time(msg->header.stamp).seconds();
-  data.m1 = msg->velocity.at(0); // front_left_wheel_joint velocity
-  data.m2 = msg->velocity.at(1); // front_right_wheel_joint velocity
+  // Left and right wheels by joint name (the order of /joint_states depends on the publisher),
+  // else the first two velocities
+  size_t left = 0, right = 1;
+  for (size_t i = 0; i < msg->name.size(); i++) {
+    if (msg->name.at(i).rfind("front_left_wheel", 0) == 0)
+      left = i;
+    else if (msg->name.at(i).rfind("front_right_wheel", 0) == 0)
+      right = i;
+  }
+  data.m1 = msg->velocity.at(left);  // front_left_wheel velocity
+  data.m2 = msg->velocity.at(right); // front_right_wheel velocity
   return data;
 }
 

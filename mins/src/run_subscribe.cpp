@@ -49,19 +49,20 @@ int main(int argc, char **argv) {
   ros::init(argc, argv, "mins_subscribe");
   auto nh = make_shared<ros::NodeHandle>("~");
   nh->param<string>("config_path", config_path, config_path);
+#endif
   std::cout << "Loading config from path: " << config_path << std::endl;
+
   // Load the config
   auto parser = make_shared<ov_core::YamlParser>(config_path);
-  parser->set_node_handler(nh);
-#endif
-
 #if ROS_AVAILABLE == 2
   parser->set_node(node);
 #else
+  parser->set_node_handler(nh);
+#endif
+
   shared_ptr<Options> op = make_shared<Options>();
   op->load_print(parser);
   shared_ptr<State_Logger> save = make_shared<State_Logger>(op);
-#endif
 
 
   // Create our system
